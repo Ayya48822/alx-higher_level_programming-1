@@ -11,9 +11,9 @@ if number < 0:
 else:
     result = num % 10
 
-if num % 10 == 0:
+if result % 10 == 0:
     print("Last digit of {} is {} and is 0".format(number, result))
-elif num % 10 > 5:
+elif result > 5:
     print(f"Last digit of {number} is {result} and is greater than 5")
 else:
     print(f"Last digit of {number} is {result} and is less than 6 and not 0")
