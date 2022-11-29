@@ -3,11 +3,11 @@
 def fizzbuzz():
     element = ""
     for i in range(1, 101):
-        if i % 3 == 0:
+        if i % 3 == 0 and i % 5 == 0:
+            element = "FizzBuzz"
+        elif i % 3 == 0:
             element = "Fizz"
         elif i % 5 == 0:
-            element = "Buzz"
-        elif i % 3 == 0 and i % 5 == 0:
             element = "FizzBuzz"
         else:
             element = f"{i}"
