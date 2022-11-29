@@ -8,7 +8,7 @@ def fizzbuzz():
         elif i % 3 == 0:
             element = "Fizz"
         elif i % 5 == 0:
-            element = "FizzBuzz"
+            element = "Buzz"
         else:
             element = f"{i}"
 
