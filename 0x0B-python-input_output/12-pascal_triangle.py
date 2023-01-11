@@ -23,6 +23,7 @@ def pascal_triangle(n):
     """
     if n <= 0:
         return []
+
     bigger_list = []
     for k in range(1, n + 1):
         lst = []
