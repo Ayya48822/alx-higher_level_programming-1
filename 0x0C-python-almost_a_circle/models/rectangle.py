@@ -100,4 +100,13 @@ class Rectangle(Base):
 
         return rectangle + rec_id + rect_xy + rec_wh
 
+    def update(self, *args):
+        """ updating class rectangle that assigns an argument"""
+        count = 0
+        if args is not None and len(args) != 0:
+            list_arguments = ["id", "width", "height", "x", "y"]
+
+            for values in args:
+                setattr(self, list_arguments[count], values)
+                count += 1
 
