@@ -31,3 +31,21 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """ creating the update function"""
+
+        count = 0
+        if args is not None and len(args) != 0:
+            argument_list = ["id", "size", "x", "y"]
+            for values in args:
+                if argument_list[count] == "size":
+                    setattr(self, "width", values)
+                    setattr(self, "height", values)
+                else:
+                    setattr(self, argument_list[count], values)
+                count += 1
+        else:
+            for key, value in kwargs.items():
+                if key == "size":
+                    setattr(self, 'width', value)
+                    setattr(self, 'height', value)
+                else:
+                    setattr(self, key, value)
