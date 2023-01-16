@@ -49,3 +49,15 @@ class Square(Rectangle):
                     setattr(self, 'height', value)
                 else:
                     setattr(self, key, value)
+    def to_dictionary(self):
+        """ method to return a square to a dictionary"""
+        my_list = ["id", "size", "x", "y"]
+        dictionary = {}
+
+        for value in my_list:
+            if value == 'size':
+                dictionary[value] = getattr(self, 'width')
+            else:
+                dictionary[value] = getattr(self, value)
+
+        return (dictionary)
