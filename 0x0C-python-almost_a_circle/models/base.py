@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module for the base model"""
 import json
+import os.path
 
 class Base:
     """ initializing the number of object variable"""
@@ -55,6 +56,24 @@ class Base:
         if cls.__name__ == "Rectangle":
             new = cls(10, 10)
         else:
-            new = (10)
+            new = cls(10)
         new.update(**dictionary)
         return new
+
+    @classmethod
+    def load_from_file(cls):
+        """creating the load from file method"""
+        filename = "{}.json".format(cls.__name__)
+
+        if os.path.exists(filename) is False:
+            return []
+
+        with open(filename, encoding="utf-8")as f:
+            list_str = f.read()
+
+        list_cls = cls.from_json_string(list_str)
+        list_ins = []
+
+        for index in range(len(list_cls)):
+            list_ins.append(cls.create(**list_cls[index]))
+        return list_ins
