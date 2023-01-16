@@ -48,3 +48,13 @@ class Base:
         if not json_string:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """creating the create method"""
+        if cls.__name__ == "Rectangle":
+            new = cls(10, 10)
+        else:
+            new = (10)
+        new.update(**dictionary)
+        return new
