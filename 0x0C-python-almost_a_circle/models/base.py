@@ -20,7 +20,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """ a function to json string"""
@@ -33,7 +33,6 @@ class Base:
         """save to file functions"""
         filename = "{}.json".format(cls.__name__)
         list_dict = []
-        
         if not list_objs:
             pass
         else:
@@ -105,6 +104,7 @@ class Base:
         with open(filename, 'w', encoding="utf-8") as f:
             writ = csv.writer(f)
             writ.writerows(matrix)
+
     @classmethod
     def load_from_file_csv(cls):
         """ Method that loads a CSV file """

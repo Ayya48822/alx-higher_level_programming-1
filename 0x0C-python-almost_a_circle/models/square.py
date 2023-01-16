@@ -1,4 +1,4 @@
-#usr/bin/python3
+#!/usr/bin/python3
 """creating a class square that inherits from class rectangle"""
 from models.rectangle import Rectangle
 
@@ -49,6 +49,7 @@ class Square(Rectangle):
                     setattr(self, 'height', value)
                 else:
                     setattr(self, key, value)
+
     def to_dictionary(self):
         """ method to return a square to a dictionary"""
         my_list = ["id", "size", "x", "y"]
